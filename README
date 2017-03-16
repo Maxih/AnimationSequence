@@ -1,0 +1,26 @@
+Developer notes:
+
+This AnimationSequence class was designed in a way that takes into account alot
+of the primary obstacles I've faced animating DOM elements in the past. The
+enqueued frames implementation is intended to give the user control over the
+animation after it has begun playing. By emptying or appending onto the queue,
+this class has the power to easily cancel, or repeat the animation any number of
+times.
+
+To keep the class as modular as possible, I also added a callback for the completion
+of an animation. In the context of a real-world solution, I might consider changing
+the options hash from a sequence of frames, to one similar to the example below,
+in order to provide more customizability and make it more easily extensible in
+the future.
+
+options = {
+  frames: [
+    [0, { transform: 'rotate(0deg)' }],
+    [1000, { transform: 'rotate(60deg)' }],
+    [1000, { transform: 'rotate(120deg)' }],
+  ],
+  events: {
+    onAnimationComplete: () => {},
+    onFrameChange: () => {}
+  }
+}

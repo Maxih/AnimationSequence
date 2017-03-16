@@ -1,0 +1,66 @@
+<html>
+  <head>
+    <script src="AnimationSequence.js"></script>
+    <script src="demo.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="./demo.css">
+  </head>
+
+  <section class="demo-wrapper">
+    <h1>
+      AnimationSequence Demo
+    </h1>
+
+    <section class="demo-item">
+      <h2>
+        Basic Implementation
+      </h2>
+      <h3>
+        By combining the AnimationSequence class and CSS3 transition properties,
+        it is possible to create smooth transitions between frames of the
+        sequence.
+      </h3>
+      <div class="demo">
+        <div class="demo-bar" id="basic-bar"></div>
+      </div>
+    </section>
+
+    <section class="demo-item">
+      <h2>
+        Repeating Animations
+      </h2>
+      <h3>
+        Callbacks for events are useful to make sure other DOM events dont interfere
+        with an animating element (IE, It might interfere with other aspects of
+        the app if X element moves while Y is still animating). This demo calls
+        the animate method upon completing its animation cycle, looping the
+        animation indefinitely.
+      </h3>
+      <h4>
+        Total Loops: <span id="repeat-count">0</span>
+      </h4>
+      <div class="demo">
+        <div class="rotating-demo" id="repeating-bar"></div>
+      </div>
+    </section>
+
+    <section class="demo-item">
+      <h2>
+        Pausing and Queuing Animations
+      </h2>
+      <h3>
+        Enqueuing the animations into frameQueue allows multiple animate() methods
+        to be invoked and animations executed without interupting the animation.
+        The animations will continue to play until all enqueued animations have been
+        played. Click add animation to queue several times to see this in action.
+      </h3>
+
+      <div class="demo">
+        <div class="demo-bar" id="interactive-bar"></div>
+      </div>
+      <button onclick="demoEnqueue()">Add Animation to queue</button>
+      <button onclick="pause()">Pause Animation</button>
+      <button onclick="play()">Continue Animation</button>
+    </section>
+  </section>
+</html>
