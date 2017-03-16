@@ -30,11 +30,11 @@
         Repeating Animations
       </h2>
       <h3>
-        Callbacks for events are useful to make sure other DOM events dont interfere
-        with an animating element (IE, It might interfere with other aspects of
-        the app if X element moves while Y is still animating). This demo calls
-        the animate method upon completing its animation cycle, looping the
-        animation indefinitely.
+        Callbacks for events are useful to ensure other DOM events do not interfere
+        with an animating element (i.e. it may interfere with other aspects of
+        the application if the X element moves while Y is still in animation).
+        This demo calls its own animate() method upon completing its animation
+        cycle, looping it indefinitely.
       </h3>
       <h4>
         Total Loops: <span id="repeat-count">0</span>
@@ -50,15 +50,15 @@
       </h2>
       <h3>
         Enqueuing the animations into frameQueue allows multiple animate() methods
-        to be invoked and animations executed without interupting the animation.
+        to be invoked and animations to be executed without them being interrupted.
         The animations will continue to play until all enqueued animations have been
-        played. Click add animation to queue several times to see this in action.
+        played. Click "Add Animation to Queue" several times to see this in action.
       </h3>
 
       <div class="demo">
         <div class="demo-bar" id="interactive-bar"></div>
       </div>
-      <button onclick="demoEnqueue()">Add Animation to queue</button>
+      <button onclick="demoEnqueue()">Add Animation to Queue</button>
       <button onclick="pause()">Pause Animation</button>
       <button onclick="play()">Continue Animation</button>
     </section>
